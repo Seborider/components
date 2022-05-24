@@ -5,10 +5,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   { 
-    path: 'elements', loadChildren: async () => {
-    const dynamicImport = await import('./elements/elements.module');
-    return dynamicImport.ElementsModule;
-    }
+    path: 'elements', loadChildren: () => import('./elements/elements.module').then((m) => m.ElementsModule)
   },
   {
     path: 'collections', loadChildren: async () => {
