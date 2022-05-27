@@ -14,6 +14,13 @@ const routes: Routes = [
     }
 
   },
+  {
+    path: 'views', loadChildren: async () => {
+      const dynamicImport = await import('./views/views.module');
+      return dynamicImport.ViewsModule;
+    }
+
+  },
   { path: '', component: HomeComponent},
   { path: '**', component: NotFoundComponent}
 ];
