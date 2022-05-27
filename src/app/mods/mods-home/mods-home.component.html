@@ -2,4 +2,5 @@
 <button (click)="onClick()" >Show Modal</button>
 <app-modal
     *ngIf="modalOpen"
+    (close)="onClick()"
 ></app-modal>
