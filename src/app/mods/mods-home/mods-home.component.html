@@ -3,4 +3,10 @@
 <app-modal
     *ngIf="modalOpen"
     (close)="onClick()"
-></app-modal>
+>
+<div modalTitle>I am also reusable</div>
+<p>I am reusable</p>
+<ng-container modalFooter>
+    <button class="ui button" (click)="onClick()">Close me!</button>
+</ng-container>
+</app-modal>
