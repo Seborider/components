@@ -21,6 +21,13 @@ const routes: Routes = [
     }
 
   },
+  {
+    path: 'mods', loadChildren: async () => {
+      const dynamicImport = await import('./mods/mods.module');
+      return dynamicImport.ModsModule;
+    }
+
+  },
   { path: '', component: HomeComponent},
   { path: '**', component: NotFoundComponent}
 ];
